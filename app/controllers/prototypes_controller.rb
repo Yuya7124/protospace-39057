@@ -49,7 +49,7 @@ class PrototypesController < ApplicationController
   private
   
   def move_to_index
-    unless user_signed_in? == Prototype.includes(:user)
+    unless user_signed_in? != Prototype.includes(:user)
       redirect_to action: :index
     end
   end
